@@ -1,0 +1,43 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "xylang",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#constants"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.xylang",
+				"match": "(\\?|\\@|\\~|\\-\\>|\\:\\>|\\<\\:|\\$|\\:|\\!)"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.xylang",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.xylang",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constant": {
+			"patterns":[
+				{
+					"name":"constant.language.boolean.xylang",
+					"match": "(true||false)"
+				}
+			]
+		}
+	},
+	"scopeName": "source.xy"
+}

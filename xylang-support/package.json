@@ -1,0 +1,26 @@
+{
+    "name": "xylang-support",
+    "displayName": "xylang-support",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "xy",
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "xylang",
+            "aliases": ["xylang", "xylang"],
+            "extensions": [".xy"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "xylang",
+            "scopeName": "source.xy",
+            "path": "./syntaxes/xylang.tmLanguage.json"
+        }]
+    }
+}
