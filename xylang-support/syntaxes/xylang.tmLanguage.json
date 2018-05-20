@@ -3,38 +3,89 @@
 	"name": "xylang",
 	"patterns": [
 		{
+			"include": "#literal"
+		},
+		{
 			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#constants"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.xylang",
-				"match": "(\\?|\\@|\\~|\\-\\>|\\:\\>|\\<\\:|\\$|\\:|\\!)"
-			}]
+		"literal": {
+			"patterns": [
+				{
+					"include": "#boolean-literal"
+				},
+				{
+					"include": "#nil-literal"
+				},
+				{
+					"include": "#numeric-literal"
+				},
+				{
+					"include": "#string-literal"
+				}
+			]
 		},
-		"strings": {
-			"name": "string.quoted.double.xylang",
+		"boolean-literal": {
+			"patterns": [
+				{
+					"name": "constant.language.boolean.true.xy",
+					"match": "(?<!\\.)\\btrue\\b"
+				},
+				{
+					"name": "constant.language.boolean.false.xy",
+					"match": "(?<!\\.)\\bfalse\\b"
+				}
+			]
+		},
+		"nil-literal": {
+			"name": "constant.language.nil.xy",
+			"match": "(?<!\\.)\\bnil\\b"
+		},
+		"numeric-literal": {
+			"patterns": [
+				{
+					"name": "constant.numeric.hex.xy",
+					"match": "\\b0(x|X)[0-9a-fA-F_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b"
+				},
+				{
+					"name": "constant.numeric.binary.xy",
+					"match": "\\b0(b|B)[01_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b"
+				},
+				{
+					"name": "constant.numeric.decimal.xy",
+					"match": "\\b([0-9_]+)?\\.[0-9_]+((e|E)[0-9]+)?(F|f|D|d|M|m)?\\b"
+				},
+				{
+					"name": "constant.numeric.decimal.xy",
+					"match": "\\b[0-9_]+(e|E)[0-9_]+(F|f|D|d|M|m)?\\b"
+				},
+				{
+					"name": "constant.numeric.decimal.xy",
+					"match": "\\b[0-9_]+(F|f|D|d|M|m)\\b"
+				},
+				{
+					"name": "constant.numeric.decimal.xy",
+					"match": "\\b[0-9_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b"
+				}
+			]
+		},
+		"string-literal": {
+			"name": "string.quoted.double.xy",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.xylang",
+					"name": "constant.character.escape.xy",
 					"match": "\\\\."
 				}
 			]
 		},
-		"constant": {
-			"patterns":[
+		"keywords": {
+			"patterns": [
 				{
-					"name":"constant.language.boolean.xylang",
-					"match": "(true||false)"
+					"name": "keyword.control.xy",
+					"match": "(\\?|\\@|\\~|\\-\\>|\\:\\>|\\<\\:|\\$|\\#|\\:|\\!)"
 				}
 			]
 		}
