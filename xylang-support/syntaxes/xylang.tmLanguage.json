@@ -1,12 +1,15 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "xylang",
+	"name": "xy",
 	"patterns": [
 		{
 			"include": "#literal"
 		},
 		{
 			"include": "#keywords"
+		},
+		{
+			"include": "#expression"
 		}
 	],
 	"repository": {
@@ -23,6 +26,13 @@
 				},
 				{
 					"include": "#string-literal"
+				}
+			]
+		},
+		"expression": {
+			"patterns":[
+				{
+					"include": "#expression-operators"
 				}
 			]
 		},
@@ -85,7 +95,59 @@
 			"patterns": [
 				{
 					"name": "keyword.control.xy",
-					"match": "(\\?|\\@|\\~|\\-\\>|\\:\\>|\\<\\:|\\$|\\#|\\:|\\!)"
+					"match": "(\\?|\\@|\\~|\\:\\=|\\-\\>|\\:\\>|\\<\\:|\\$|\\#|\\:|\\!)"
+				}
+			]
+		},
+		"expression-operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.assignment.compound.xy",
+					"match": "\\*=|/=|%=|\\+=|-="
+				},
+				{
+					"name": "keyword.operator.assignment.compound.bitwise.xy",
+					"match": "\\&=|\\^=|<<=|>>=|\\|="
+				},
+				{
+					"name": "keyword.operator.bitwise.shift.xy",
+					"match": "<<|>>"
+				},
+				{
+					"name": "keyword.operator.comparison.xy",
+					"match": "==|!="
+				},
+				{
+					"name": "keyword.operator.relational.xy",
+					"match": "<=|>=|<|>"
+				},
+				{
+					"name": "keyword.operator.logical.xy",
+					"match": "\\!|&&|\\|\\|"
+				},
+				{
+					"name": "keyword.operator.bitwise.xy",
+					"match": "\\&|~|\\^|\\|"
+				},
+				{
+					"name": "keyword.operator.assignment.xy",
+					"match": "\\="
+				},
+				{
+					"name": "keyword.operator.decrement.xy",
+					"match": "--"
+				},
+				{
+					"name": "keyword.operator.increment.xy",
+					"match": "\\+\\+"
+				},
+				{
+					"name": "keyword.operator.arithmetic.xy",
+					"match": "%|\\*|/|-|\\+"
+				},
+				{
+					"name": "keyword.operator.null-coalescing.xy",
+					"match": "\\?\\?"
 				}
 			]
 		}
