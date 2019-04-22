@@ -1,2 +1,2 @@
-# xylang-support
-XyLang language support
+# xs-support
+Xs language support

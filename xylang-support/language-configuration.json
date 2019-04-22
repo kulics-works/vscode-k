@@ -1,7 +1,7 @@
 {
     "comments": {
-        "lineComment": "//",
-        "blockComment": [ "/*", "*/" ]
+        "lineComment": "#",
+        "blockComment": [ "##", "##" ]
     },
     // symbols used as brackets
     "brackets": [
@@ -22,11 +22,5 @@
         ["[", "]"],
         ["(", ")"],
         ["\"", "\""],
-    ],
-	"folding": {
-		"markers": {
-			"start": "^\\s*#region\\b",
-			"end": "^\\s*#endregion\\b"
-		}
-	}
+    ]
 }
