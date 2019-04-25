@@ -88,13 +88,28 @@
 			]
 		},
 		"string-literal": {
-			"name": "string.quoted.double.xs",
-			"begin": "(\"|')",
-			"end": "(\"|')",
-			"patterns": [
+			"patterns" :[
 				{
-					"name": "constant.character.escape.xs",
-					"match": "\\\\."
+					"name": "string.quoted.double.xs",
+					"begin": "(\")",
+					"end": "(\")",
+					"patterns": [
+						{
+							"name": "constant.character.escape.xs",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.xs",
+					"begin": "(')",
+					"end": "(')",
+					"patterns": [
+						{
+							"name": "constant.character.escape.xs",
+							"match": "\\\\."
+						}
+					]
 				}
 			]
 		},
@@ -142,13 +157,19 @@
 			"patterns": [
 				{
 					"name": "comment.block.xs",
-					"begin": "\\#\\#",
-					"end": "\\#\\#"
+					"begin": "(\\#\\#)",
+					"end": "(\\#\\#)",
+					"patterns": [
+						{
+							"name": "constant.character.escape.xs",
+							"match": "\\\\."
+						}
+					]
 				},
 				{
 					"name": "comment.line.xs",
-					"begin": "(^\\s+)?(?=\\#)",
-					"end": "(?=$)"
+					"begin": "(\\#)",
+					"end": "(\n)"
 				}
 			]
 		}
