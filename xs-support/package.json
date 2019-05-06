@@ -13,7 +13,7 @@
     "contributes": {
         "languages": [{
             "id": "xs",
-            "aliases": ["xslang"],
+            "aliases": ["Xs"],
             "extensions": [".xs"],
             "configuration": "./language-configuration.json"
         }],
