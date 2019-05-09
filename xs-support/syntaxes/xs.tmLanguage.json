@@ -22,9 +22,6 @@
 					"include": "#boolean-literal"
 				},
 				{
-					"include": "#nil-literal"
-				},
-				{
 					"include": "#numeric-literal"
 				},
 				{
@@ -48,14 +45,6 @@
 				{
 					"name": "constant.language.boolean.false.xs",
 					"match": "(?<!\\.)\\bFalse\\b"
-				}
-			]
-		},
-		"nil-literal":{
-			"patterns": [ 
-				{
-					"name": "constant.language.nil.xs",
-					"match": "(?<!\\.)\\bNil\\b"
 				}
 			]
 		},
@@ -117,7 +106,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.xs",
-					"match": "(\\?|\\@|\\!|\\-\\>|\\~\\>|\\<\\-|\\<\\~|\\.\\.\\.|\\.\\.)"
+					"match": "(:=|:|\\?|\\@|\\!|\\^|\\-\\>|\\~\\>|\\<\\-|\\<\\~|\\.\\.\\.|\\.\\.)"
 				}
 			]
 		},

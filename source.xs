@@ -1,13 +1,11 @@
-\Xs {
-    StaticG = Readonly.V
-} <- {
+\Xs\Example <- {
     System
     System\IO
     System\Linq
     System\ComponentModel\DataAnnotations\Schema
     System\ComponentModel\DataAnnotations
 
-    Xs.example
+    Xs\Example.Example
 }
 
 ## 
@@ -45,6 +43,14 @@ Main() ~> () {
 
     p.TestFuncTemplate<I32, Str>(1, "2").TestPackage()
     
+    @ True {
+        <- @
+    }
+    
+    ? 1 == 1 {
+        Prt("test exception expression")
+    }
+
     Rd()
 }
 
@@ -114,7 +120,7 @@ TestOperator() -> () {
 }
 
 TestString() -> () {
-    @ ea <- "love xs" {
+    "love xs" @ ea {
         ? ea == 'e' {
             Prt("love xs")
         }
@@ -122,14 +128,14 @@ TestString() -> () {
 }
 
 TestOptional() -> () {
-    a: I32! = 1
-    a?.ToStr()
-    b: Str! = ""
-    b?.ToStr()
-    c: Obj! = Nil
-    d: App! = Nil
-    e: [I32!]! = [I32!]!{0}
-    e?[0]?.ToStr()?.ToStr()
+    a: ^I32 = 1
+    a^.ToStr()
+    b: ^Str = ""
+    b^.ToStr()
+    c: ^{} = ()
+    d: ^App = ()
+    e: ^[^I32] = [^I32]{0}
+    e^[0]^.ToStr()^.ToStr()
     f := d.Def(App{})
 }
 
@@ -138,7 +144,7 @@ TestTypeConvert() -> () {
     y := x.As<Program>()
     z1 := (12.34).ToF32()
     z2 := z1.ToI64()
-    Prt( z2.To<Obj>().To<I64>() )
+    Prt( z2.To<{}>().To<I64>() )
     Prt( y.Is<Program>() )
     Prt( x.As<Program>().Running )
     Prt( ?(:Program) )
@@ -152,14 +158,14 @@ TestDefault() -> () {
 }
 
 TestSwitch() -> () {
-    x :Obj = 3
-    ? x -> 1 {
+    x :{} = 3
+    x ? 1 {
         Prt(1)
     } :Str {
         Prt("string")
     } :I32 {
         Prt("int")
-    } Nil {
+    } () {
         Prt("null")
     } _ {
         Prt("default")
@@ -192,11 +198,11 @@ TestArray() -> () {
     arrArr := {{1,1,1}, {1,1,1}}
     arrEmpty := [I32]{}
     arrType := {1,2,3}
-    array: Arr<I32> = ArrOf(1,2,3)
-    @ item <- arrNumber {
+    array: []I32 = ArrOf(1,2,3)
+    arrNumber @ item {
         Prt(item)
     }
-    @ [i]v <- arrNumber {
+    arrNumber @ [i]v {
         Prt(i)
         Prt(v)
     }
@@ -208,7 +214,7 @@ TestDictionary() -> () {
     empty := [[Str]I32]{}
     dicTemp := {["k1"]1,["k2"]2}
     dicTemp += {["k3"]3}
-    @ [k]v <- dicTemp {
+    dicTemp @ [k]v {
         Prt(k)
         Prt(v)
     }
@@ -218,17 +224,17 @@ TestDictionary() -> () {
 
 TestLoop() -> () {
     Prt(" 0 to 10")
-    @ i <- [0 <= 10] {
+    [0 <= 10] @ i {
         Prt(i, ", ", "")
     }
     Prt(" ")
     Prt(" 0 to 8 step 2")
-    @ ea <- [0 < 8, 2] {
+    [0 < 8, 2] @ ea {
         Prt(ea, ", ", "")
     }
     Prt(" ")
     Prt(" 8 to 2 step 2")
-    @ ea <- [8 > 0, 2] {
+    [8 > 0, 2] @ ea {
         Prt(ea, ", ", "")
         ? ea == 6 {
             -> @
@@ -246,7 +252,7 @@ TestLoop() -> () {
 }
 
 TestCheck() -> () {
-    z1 :Defer! = Nil
+    z1: ^Defer = ()
     ! z2 := Defer{} {
         z1 = Defer{}
         ! z3 := Defer{} {
@@ -262,7 +268,7 @@ TestCheck() -> () {
     } e {
         !(e)
     } _ {
-        ? z1 >< Nil {
+        ? z1 >< () {
             z1.Dispose()
         }
     }
@@ -316,10 +322,19 @@ TestLambda() -> () {
 
 TestAsync() ~> (x: I32, y: I32, z: Str) {
     Slp(1000)
-    async1() ~> () {
+    [1<=10] @ i {
+        Go({ ~> 
+            <~ Dly(1000)
+            Prt("task", i)
+        })
+        Go({ -> 
+            <- ()
+        })
+    }
+    funWait() ~> () {
         <~ Dly(1000)
     }
-    <~ async1()
+    <~ funWait()
     
     <- (1, 2, "123")
 }
@@ -338,19 +353,19 @@ ConstFunction() -> (v: I32) {
     <- (ConstData) 
 }
 
-InPackageArray() {
-    Arr = {1,2,3,4,5,6,7}
-} -> {
+InPackageArray -> {
     Arr: [I32]
+} () {
+    Arr = {1,2,3,4,5,6,7}
 }
 
-Defer() -> {
+Defer -> {
     Data := ""
 } IDisposable {
     Dispose() -> () {}
 }
 
-App() -> { 
+App -> { 
     I := 555
     Arr := {1,1,1,1}
     _PriName := " Program "
@@ -369,7 +384,7 @@ App() -> {
     TestFuncTemplate<T1, T2>(data1: T1, data2: T2) -> (data: App) {
         <- (..)
     }
-} Program() {  
+} {Program} {  
 } Protocol {
     B(): I32 {
         get { 
@@ -396,13 +411,13 @@ App() -> {
     F(): Str = "get"
 } 
 
-Result(data: Str) {
-    ..Data = data
-} -> {
+Result -> {
     Data: Str
+} (data: Str) {
+    ..Data = data
 }
 
-TestPackageTemplate<T:class>() -> {
+TestPackageTemplate<T:class> -> {
     Data: T
 
     Generic(a: T) -> () {}
@@ -413,13 +428,13 @@ TestProtocolTemplate<T:class> <- {
     Test(in: T) -> ()
 }
 
-TestImplementTemplate() -> {
+TestImplementTemplate -> {
 } TestProtocolTemplate<TestImplementTemplate> {
     Test(in: TestImplementTemplate) -> () {}
     Test<H:class>(in: H) -> () {}
 }
 
-Program() -> {
+Program -> {
     Name(): Str = "name" {
         set { 
             _Name = value 
@@ -437,13 +452,13 @@ Protocol <- {
     F(): Str
 }
 
-`Table("test")`
-TestAnnotation() -> {
-    `Key, Column("id")`
+[Table("test")]
+TestAnnotation -> {
+    [Key, Column("id")]
     Id(): Str
-    `Column("nick_name")`
+    [Column("nick_name")]
     NickName(): Str
-    `Column("profile")`
+    [Column("profile")]
     Profile(): Str
 }
 
@@ -452,17 +467,17 @@ TestEnum -> [
     Err = -1
 ]
 
-Package(y: I32 = 3) {
-    X = ConstData
-    Y = y
-} -> {
+Package -> {
     X: I32
     Y: I32
+} (y: I32 = 3) {
+    X = ConstData
+    Y = y
 }
 
-PackageChild(x: I32, y: I32) {
-    X = x
-} -> {
+PackageChild -> {
     X: I32
-} Package(y) {
+} (x: I32, y: I32)...(y) {
+    X = x
+} {Package} {
 }
