@@ -145,6 +145,28 @@
 		"comment": {
 			"patterns": [
 				{
+					"name": "comment.block.big.big.xs",
+					"begin": "(\\#\\#\\#)",
+					"end": "(\\#\\#\\#)",
+					"patterns": [
+						{
+							"name": "constant.character.escape.xs",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "comment.block.big.xs",
+					"begin": "(\\#\\#)",
+					"end": "(\\#\\#)",
+					"patterns": [
+						{
+							"name": "constant.character.escape.xs",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
 					"name": "comment.block.xs",
 					"begin": "(\\#)",
 					"end": "(\\#)",
