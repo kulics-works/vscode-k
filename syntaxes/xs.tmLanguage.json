@@ -146,19 +146,14 @@
 			"patterns": [
 				{
 					"name": "comment.block.xs",
-					"begin": "(\\#\\#)",
-					"end": "(\\#\\#)",
+					"begin": "(\\#)",
+					"end": "(\\#)",
 					"patterns": [
 						{
 							"name": "constant.character.escape.xs",
 							"match": "\\\\."
 						}
 					]
-				},
-				{
-					"name": "comment.line.xs",
-					"begin": "(\\#)",
-					"end": "(\n)"
 				}
 			]
 		}
