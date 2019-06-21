@@ -26,6 +26,9 @@
 				},
 				{
 					"include": "#string-literal"
+				},
+				{
+					"include": "#nil-literal"
 				}
 			]
 		},
@@ -99,6 +102,14 @@
 							"match": "\\\\."
 						}
 					]
+				}
+			]
+		},
+		"nil-literal":{
+			"patterns": [ 
+				{
+					"name": "constant.language.nil.xs",
+					"match": "(?<!\\.)\\bNil\\b"
 				}
 			]
 		},
