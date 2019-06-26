@@ -1,2 +1,2 @@
-# xs-support
-Xs language support
+# lite-support
+lite language support
