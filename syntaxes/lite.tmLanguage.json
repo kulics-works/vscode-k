@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "xs",
+	"name": "lite",
 	"patterns": [
 		{
 			"include": "#literal"
@@ -42,11 +42,11 @@
 		"boolean-literal": {
 			"patterns": [
 				{
-					"name": "constant.language.boolean.true.xs",
+					"name": "constant.language.boolean.true.lite",
 					"match": "(?<!\\.)\\bTrue\\b"
 				},
 				{
-					"name": "constant.language.boolean.false.xs",
+					"name": "constant.language.boolean.false.lite",
 					"match": "(?<!\\.)\\bFalse\\b"
 				}
 			]
@@ -54,27 +54,27 @@
 		"numeric-literal": {
 			"patterns": [
 				{
-					"name": "constant.numeric.hex.xs",
+					"name": "constant.numeric.hex.lite",
 					"match": "\\b0(x|X)[0-9a-fA-F_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b"
 				},
 				{
-					"name": "constant.numeric.binary.xs",
+					"name": "constant.numeric.binary.lite",
 					"match": "\\b0(b|B)[01_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b"
 				},
 				{
-					"name": "constant.numeric.decimal.xs",
+					"name": "constant.numeric.decimal.lite",
 					"match": "\\b([0-9_]+)?\\.[0-9_]+((e|E)[0-9]+)?(F|f|D|d|M|m)?\\b"
 				},
 				{
-					"name": "constant.numeric.decimal.xs",
+					"name": "constant.numeric.decimal.lite",
 					"match": "\\b[0-9_]+(e|E)[0-9_]+(F|f|D|d|M|m)?\\b"
 				},
 				{
-					"name": "constant.numeric.decimal.xs",
+					"name": "constant.numeric.decimal.lite",
 					"match": "\\b[0-9_]+(F|f|D|d|M|m)\\b"
 				},
 				{
-					"name": "constant.numeric.decimal.xs",
+					"name": "constant.numeric.decimal.lite",
 					"match": "\\b[0-9_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b"
 				}
 			]
@@ -82,23 +82,23 @@
 		"string-literal": {
 			"patterns" :[
 				{
-					"name": "string.quoted.double.xs",
+					"name": "string.quoted.double.lite",
 					"begin": "(\")",
 					"end": "(\")",
 					"patterns": [
 						{
-							"name": "constant.character.escape.xs",
+							"name": "constant.character.escape.lite",
 							"match": "\\\\."
 						}
 					]
 				},
 				{
-					"name": "string.quoted.single.xs",
+					"name": "string.quoted.single.lite",
 					"begin": "(')",
 					"end": "(')",
 					"patterns": [
 						{
-							"name": "constant.character.escape.xs",
+							"name": "constant.character.escape.lite",
 							"match": "\\\\."
 						}
 					]
@@ -108,7 +108,7 @@
 		"nil-literal":{
 			"patterns": [ 
 				{
-					"name": "constant.language.nil.xs",
+					"name": "constant.language.nil.lite",
 					"match": "(?<!\\.)\\bNil\\b"
 				}
 			]
@@ -116,7 +116,7 @@
 		"keywords": {
 			"patterns": [
 				{
-					"name": "keyword.control.xs",
+					"name": "keyword.control.lite",
 					"match": "(:=|:|\\?|\\@|\\!|\\=\\>|\\-\\>|\\~\\>|\\<\\-|\\<\\~|\\.\\.\\.|\\.\\.|\\.)"
 				}
 			]
@@ -124,31 +124,31 @@
 		"expression-operators": {
 			"patterns": [
 				{
-					"name": "keyword.operator.assignment.compound.xs",
+					"name": "keyword.operator.assignment.compound.lite",
 					"match": "(\\*=|/=|%=|\\+=|-=|\\*\\*=|//=|%%=)"
 				},
 				{
-					"name": "keyword.operator.comparison.xs",
+					"name": "keyword.operator.comparison.lite",
 					"match": "(==|><)"
 				},
 				{
-					"name": "keyword.operator.relational.xs",
+					"name": "keyword.operator.relational.lite",
 					"match": "(<=|>=|<|>)"
 				},
 				{
-					"name": "keyword.operator.logical.xs",
+					"name": "keyword.operator.logical.lite",
 					"match": "(\\~|&|\\|)"
 				},
 				{
-					"name": "keyword.operator.assignment.xs",
+					"name": "keyword.operator.assignment.lite",
 					"match": "(\\=|\\:\\=)"
 				},
 				{
-					"name": "keyword.operator.arithmetic.xs",
+					"name": "keyword.operator.arithmetic.lite",
 					"match": "%|\\*|/|-|\\+"
 				},
 				{
-					"name": "keyword.operator.null-coalescing.xs",
+					"name": "keyword.operator.null-coalescing.lite",
 					"match": "\\?\\?"
 				}
 			]
@@ -156,34 +156,34 @@
 		"comment": {
 			"patterns": [
 				{
-					"name": "comment.block.big.big.xs",
+					"name": "comment.block.big.big.lite",
 					"begin": "(\\#\\#\\#)",
 					"end": "(\\#\\#\\#)",
 					"patterns": [
 						{
-							"name": "constant.character.escape.xs",
+							"name": "constant.character.escape.lite",
 							"match": "\\\\."
 						}
 					]
 				},
 				{
-					"name": "comment.block.big.xs",
+					"name": "comment.block.big.lite",
 					"begin": "(\\#\\#)",
 					"end": "(\\#\\#)",
 					"patterns": [
 						{
-							"name": "constant.character.escape.xs",
+							"name": "constant.character.escape.lite",
 							"match": "\\\\."
 						}
 					]
 				},
 				{
-					"name": "comment.block.xs",
+					"name": "comment.block.lite",
 					"begin": "(\\#)",
 					"end": "(\\#)",
 					"patterns": [
 						{
-							"name": "constant.character.escape.xs",
+							"name": "constant.character.escape.lite",
 							"match": "\\\\."
 						}
 					]
@@ -191,5 +191,5 @@
 			]
 		}
 	},
-	"scopeName": "source.xs"
+	"scopeName": "source.lite"
 }
