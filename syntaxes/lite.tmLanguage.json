@@ -43,11 +43,11 @@
 			"patterns": [
 				{
 					"name": "constant.language.boolean.true.lite",
-					"match": "(?<!\\.)\\bTrue\\b"
+					"match": "(?<!\\.)\\btrue\\b"
 				},
 				{
 					"name": "constant.language.boolean.false.lite",
-					"match": "(?<!\\.)\\bFalse\\b"
+					"match": "(?<!\\.)\\bfalse\\b"
 				}
 			]
 		},
@@ -109,7 +109,7 @@
 			"patterns": [ 
 				{
 					"name": "constant.language.nil.lite",
-					"match": "(?<!\\.)\\bNil\\b"
+					"match": "(?<!\\.)\\bnil\\b"
 				}
 			]
 		},
