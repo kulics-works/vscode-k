@@ -117,7 +117,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.lite",
-					"match": "(\\?|\\@|\\!|\\=\\>|\\-\\>|\\~\\>|\\<\\-|\\<\\~)"
+					"match": "(\\?|\\@|\\!|\\$|%|\\=\\>|\\-\\>|\\~\\>|\\<\\-|\\<\\~)"
 				}
 			]
 		},
@@ -138,6 +138,10 @@
 				{
 					"name": "keyword.operator.logical.lite",
 					"match": "(\\~|&|\\|)"
+				},
+				{
+					"name": "keyword.operator.bitwise.lite",
+					"match": "<<|>>|~~|\\^\\^|&&|\\|\\|"
 				},
 				{
 					"name": "keyword.operator.assignment.lite",
