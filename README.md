@@ -1,2 +1,2 @@
 # lite-support
-lite language support
+lite language vscode extension
