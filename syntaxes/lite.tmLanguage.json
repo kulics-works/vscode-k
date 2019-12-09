@@ -160,37 +160,14 @@
 		"comment": {
 			"patterns": [
 				{
-					"name": "comment.block.big.big.lite",
-					"begin": "(\\#\\#\\#)",
-					"end": "(\\#\\#\\#)",
-					"patterns": [
-						{
-							"name": "constant.character.escape.lite",
-							"match": "\\\\."
-						}
-					]
-				},
-				{
-					"name": "comment.block.big.lite",
-					"begin": "(\\#\\#)",
-					"end": "(\\#\\#)",
-					"patterns": [
-						{
-							"name": "constant.character.escape.lite",
-							"match": "\\\\."
-						}
-					]
-				},
-				{
 					"name": "comment.block.lite",
-					"begin": "(\\#)",
-					"end": "(\\#)",
-					"patterns": [
-						{
-							"name": "constant.character.escape.lite",
-							"match": "\\\\."
-						}
-					]
+					"begin": "{\\#",
+					"end": "\\#}"
+				},
+				{
+					"name": "comment.line.lite",
+					"begin": "(^\\s+)?(?=\\#)",
+					"end": "(?=$)"
 				}
 			]
 		}
