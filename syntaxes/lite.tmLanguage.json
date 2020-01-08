@@ -102,6 +102,11 @@
 							"match": "\\\\."
 						}
 					]
+				},
+				{
+					"name": "string.grave.single.lite",
+					"begin": "`",
+					"end": "`"
 				}
 			]
 		},
@@ -161,13 +166,13 @@
 			"patterns": [
 				{
 					"name": "comment.block.lite",
-					"begin": "{\\#",
-					"end": "\\#}"
+					"begin": "#=",
+					"end": "=#"
 				},
 				{
 					"name": "comment.line.lite",
-					"begin": "(^\\s+)?(?=\\#)",
-					"end": "(?=$)"
+					"begin": "#",
+					"end": "$"
 				}
 			]
 		}
