@@ -82,10 +82,41 @@
 		"string-literal": {
 			"patterns" :[
 				{
+					"name": "string.quoted.raw.lite",
+					"begin": "(\"\"\")",
+					"end": "(\"\"\")",
+					"patterns": [
+						{
+							"name": "meta.embedded.raw.lite",
+							"begin": "\\\\\\{",
+							"end": "\\}",
+							"patterns": [
+								{
+									"include": "$self"
+								}
+							]
+						},
+						{
+							"name": "constant.character.escape.lite",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
 					"name": "string.quoted.double.lite",
 					"begin": "(\")",
 					"end": "(\")",
 					"patterns": [
+						{
+							"name": "meta.embedded.line.lite",
+							"begin": "\\\\\\{",
+							"end": "\\}",
+							"patterns": [
+								{
+									"include": "$self"
+								}
+							]
+						},
 						{
 							"name": "constant.character.escape.lite",
 							"match": "\\\\."
