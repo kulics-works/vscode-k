@@ -1,26 +1,26 @@
 {
-    "name": "lite-support",
-    "displayName": "lite-support",
-    "description": "",
-    "version": "0.0.1",
-    "publisher": "kulics",
+    "name": "K",
+    "displayName": "K Language",
+    "description": "K for Visual Studio Code",
+    "version": "1.0.0",
+    "publisher": "Kulics",
     "engines": {
-        "vscode": "^1.23.0"
+        "vscode": "^1.30.0"
     },
     "categories": [
         "Programming Languages"
     ],
     "contributes": {
         "languages": [{
-            "id": "lite",
-            "aliases": ["lite"],
-            "extensions": [".lite"],
+            "id": "k",
+            "aliases": ["k"],
+            "extensions": [".k"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "lite",
-            "scopeName": "source.lite",
-            "path": "./syntaxes/lite.tmLanguage.json"
+            "language": "k",
+            "scopeName": "source.k",
+            "path": "./syntaxes/k.tmLanguage.json"
         }]
     }
 }

@@ -1,2 +1,3 @@
-# lite-support
-lite language vscode extension
+# VSCode-K
+
+K for Visual Studio Code
