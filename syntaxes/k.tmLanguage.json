@@ -92,7 +92,7 @@
 					"patterns": [
 						{
 							"name": "meta.embedded.raw.k",
-							"begin": "\\\\\\{",
+							"begin": "\\$\\{",
 							"end": "\\}",
 							"patterns": [
 								{
@@ -113,7 +113,7 @@
 					"patterns": [
 						{
 							"name": "meta.embedded.line.k",
-							"begin": "\\\\\\{",
+							"begin": "\\$\\{",
 							"end": "\\}",
 							"patterns": [
 								{
