@@ -3,6 +3,9 @@
 	"name": "k",
 	"patterns": [
 		{
+			"include": "#comment"
+		},
+		{
 			"include": "#literal"
 		},
 		{
@@ -10,9 +13,6 @@
 		},
 		{
 			"include": "#expression"
-		},
-		{
-			"include": "#comment"
 		}
 	],
 	"repository": {
@@ -157,7 +157,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.k",
-					"match": "(\\?|\\~\\@|\\@|\\!|\\$|\\-\\>\\>|\\-\\>|\\<\\<\\-|\\<\\-|\\<\\~|\\~\\>)"
+					"match": "(\\#|\\?|\\~\\@|\\@|\\!|\\$|\\-\\>\\>|\\-\\>|\\<\\<\\-|\\<\\-|\\<\\~|\\~\\>)"
 				}
 			]
 		},
@@ -206,7 +206,7 @@
 				},
 				{
 					"name": "comment.line.k",
-					"begin": "#",
+					"begin": "#:",
 					"end": "$"
 				}
 			]
