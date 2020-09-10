@@ -196,12 +196,12 @@
 			"patterns": [
 				{
 					"name": "comment.block.feel",
-					"begin": "#=",
-					"end": "=#"
+					"begin": "\\+\\+",
+					"end": "\\+\\+"
 				},
 				{
 					"name": "comment.line.feel",
-					"begin": "#:",
+					"begin": "--",
 					"end": "$"
 				}
 			]
