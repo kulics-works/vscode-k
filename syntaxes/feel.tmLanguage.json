@@ -55,31 +55,31 @@
 			"patterns": [
 				{
 					"name": "constant.numeric.hex.feel",
-					"match": "\\b0(x|X)[0-9a-fA-F_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b"
+					"match": "\\b0(x|X)[0-9a-fA-F_]+(I8|I16|I32|I64|I128|U8|U16|U32|U64|U128)?\\b"
 				},
 				{
 					"name": "constant.numeric.octal.feel",
-					"match": "\\b0(o|O)[0-8_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b"
+					"match": "\\b0(o|O)[0-8_]+(I8|I16|I32|I64|I128|U8|U16|U32|U64|U128)?\\b"
 				},
 				{
 					"name": "constant.numeric.binary.feel",
-					"match": "\\b0(b|B)[01_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b"
+					"match": "\\b0(b|B)[01_]+(I8|I16|I32|I64|I128|U8|U16|U32|U64|U128)?\\b"
 				},
 				{
 					"name": "constant.numeric.decimal.feel",
-					"match": "\\b([0-9_]+)?\\.[0-9_]+((e|E)[0-9]+)?(F|f|D|d|M|m)?\\b"
+					"match": "\\b([0-9_]+)?\\.[0-9_]+((e|E)[0-9]+)?(F16|F32|F64|F128)?\\b"
 				},
 				{
 					"name": "constant.numeric.decimal.feel",
-					"match": "\\b[0-9_]+(e|E)[0-9_]+(F|f|D|d|M|m)?\\b"
+					"match": "\\b[0-9_]+(e|E)[0-9_]+(F16|F32|F64|F128)?\\b"
 				},
 				{
 					"name": "constant.numeric.decimal.feel",
-					"match": "\\b[0-9_]+(F|f|D|d|M|m)\\b"
+					"match": "\\b[0-9_]+(F16|F32|F64|F128)\\b"
 				},
 				{
 					"name": "constant.numeric.decimal.feel",
-					"match": "\\b[0-9_]+(U|u|L|l|UL|Ul|uL|ul|LU|Lu|lU|lu)?\\b"
+					"match": "\\b[0-9_]+(I8|I16|I32|I64|I128|U8|U16|U32|U64|U128)?\\b"
 				}
 			]
 		},
@@ -92,7 +92,7 @@
 					"patterns": [
 						{
 							"name": "meta.embedded.raw.feel",
-							"begin": "\\$\\{",
+							"begin": "\\\\{",
 							"end": "\\}",
 							"patterns": [
 								{
@@ -113,7 +113,7 @@
 					"patterns": [
 						{
 							"name": "meta.embedded.line.feel",
-							"begin": "\\$\\{",
+							"begin": "\\\\{",
 							"end": "\\}",
 							"patterns": [
 								{
