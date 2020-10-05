@@ -195,14 +195,14 @@
 		"comment": {
 			"patterns": [
 				{
-					"name": "comment.block.feel",
-					"begin": "\\+\\+",
-					"end": "\\+\\+"
+					"name": "comment.block.big.feel",
+					"begin": "```",
+					"end": "```"
 				},
 				{
-					"name": "comment.line.feel",
-					"begin": "--",
-					"end": "$"
+					"name": "comment.block.feel",
+					"begin": "`",
+					"end": "`"
 				}
 			]
 		}
