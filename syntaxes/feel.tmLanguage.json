@@ -137,6 +137,17 @@
 							"match": "\\\\."
 						}
 					]
+				},
+				{
+					"name": "string.quoted.back.feel",
+					"begin": "(`)",
+					"end": "(`)",
+					"patterns": [
+						{
+							"name": "constant.character.escape.feel",
+							"match": "\\\\."
+						}
+					]
 				}
 			]
 		},
@@ -195,14 +206,14 @@
 		"comment": {
 			"patterns": [
 				{
-					"name": "comment.block.big.feel",
-					"begin": "```",
-					"end": "```"
+					"name": "comment.block.feel",
+					"begin": "\\/\\*",
+					"end": "\\*\\/"
 				},
 				{
-					"name": "comment.block.feel",
-					"begin": "`",
-					"end": "`"
+					"name": "comment.line.feel",
+					"begin": "\\/\\/",
+					"end": "$"
 				}
 			]
 		}
