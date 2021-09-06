@@ -163,7 +163,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.feel",
-					"match": "(?<!\\.)\\b(var|fun|ret|if|else|in|case|for|do|break|continue|and|or|not|new|in|out|is|as|use|mod|typ)\\b"
+					"match": "(?<!\\.)\\b(let|mut|return|if|else|in|case|of|for|do|break|continue|and|or|not|new|in|out|is|as|use|mod|type)\\b"
 				}
 			]
 		},
