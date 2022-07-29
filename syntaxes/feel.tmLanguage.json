@@ -175,7 +175,7 @@
 				},
 				{
 					"name": "keyword.operator.comparison.feel",
-					"match": "(==|><)"
+					"match": "(==|!=)"
 				},
 				{
 					"name": "keyword.operator.relational.feel",
@@ -183,7 +183,7 @@
 				},
 				{
 					"name": "keyword.operator.logical.feel",
-					"match": "(\\~|&|\\|)"
+					"match": "(\\!|&|\\|)"
 				},
 				{
 					"name": "keyword.operator.bitwise.feel",
