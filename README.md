@@ -1,3 +1,3 @@
-# VSCode-Feel
+# VSCode-K
 
-Feel for Visual Studio Code
+K for Visual Studio Code

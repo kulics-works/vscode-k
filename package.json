@@ -1,7 +1,7 @@
 {
-    "name": "feel",
-    "displayName": "Feel Language",
-    "description": "Feel for Visual Studio Code",
+    "name": "k",
+    "displayName": "K Language",
+    "description": "K for Visual Studio Code",
     "version": "1.0.0",
     "publisher": "Kulics",
     "engines": {
@@ -12,15 +12,15 @@
     ],
     "contributes": {
         "languages": [{
-            "id": "feel",
-            "aliases": ["feel"],
-            "extensions": [".feel"],
+            "id": "k",
+            "aliases": ["k"],
+            "extensions": [".k"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "feel",
-            "scopeName": "source.feel",
-            "path": "./syntaxes/feel.tmLanguage.json"
+            "language": "k",
+            "scopeName": "source.k",
+            "path": "./syntaxes/k.tmLanguage.json"
         }]
     }
 }
